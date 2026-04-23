@@ -13,6 +13,7 @@ By prioritizing simplicity and an engaging user experience, VoteBuddy replaces l
 1. **Absolute Neutrality:** Built strictly for educational purposes. It offers zero political opinions and only presents facts about the voting process.
 2. **Beginner-Friendly Focus:** Specifically engineered for first-time voters with intuitive guides and zero jargon.
 3. **High Interactivity:** Moves away from reading "long paragraphs" to a dynamic conversational format with follow-up chips.
+4. **Inclusive Accessibility:** Built with ARIA standards, integrated Text-to-Speech (TTS), and specific guides for Persons with Disabilities (PwD).
 
 ---
 
@@ -39,10 +40,18 @@ Actively dispels common confusions (e.g., *Myth: Voting costs money. Fact: Votin
 ### 7. 📊 Text-Based Visual Timelines
 Breaks down the election into a simple "Before / During / After" flow to prevent users from getting overwhelmed by complex election schedules.
 
-### 8. 🛡️ Robust Scenario Handling & Error Correction
+### 8. 🔊 Integrated Voice Assistant (Text-to-Speech)
+To support users who cannot read well or prefer audio, VoteBuddy features a native **Read Aloud** button on every response, powered by the Web Speech API.
+
+### 9. 🗺️ Location & State-Specific Guidance
+Users can ask how to find their specific polling booth, and VoteBuddy provides direct methods (Portals, Apps, SMS) and explains the role of state CEO websites.
+
+### 10. 🛡️ Robust Scenario Handling & Edge Cases
 If a user is confused or types a generic greeting, VoteBuddy warmly guides them back. It also handles specific edge cases like:
 - *"I lost my voter ID"*
 - *"I moved to a new city"*
+- *"Information for disabled voters (PwD)"*
+- *"Can NRIs vote?"*
 
 ---
 
@@ -66,7 +75,6 @@ Because VoteBuddy AI is built with pure Vanilla Web Technologies, there are no c
 ---
 
 ## 💡 Future Enhancements (Ideas)
-- **Voice Assistant Integration:** Allowing users to speak their queries and receive Text-to-Speech (TTS) explanations.
 - **Location API Integration:** Automatically detecting the user's constituency to provide specific polling booth data.
 - **Backend LLM Integration:** Currently operating on a lightweight, lightning-fast static Knowledge Base, but can easily be hooked up to an LLM endpoint for dynamic querying.
 

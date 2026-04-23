@@ -52,6 +52,8 @@
                 <button class="action-btn" data-query="Show myths vs facts about voting"><span class="action-icon">🔍</span><span>Myths vs Facts</span></button>
                 <button class="action-btn" data-query="I lost my voter ID"><span class="action-icon">😟</span><span>Lost Voter ID Help</span></button>
                 <button class="action-btn" data-query="I moved to another city"><span class="action-icon">🏙️</span><span>Moved City? Guide</span></button>
+                <button class="action-btn" data-query="Find my polling booth"><span class="action-icon">📍</span><span>Find Polling Booth</span></button>
+                <button class="action-btn" data-query="Information for disabled voters"><span class="action-icon">♿</span><span>Disabled Voter Info</span></button>
             </nav>
 
             <!-- Quiz & Checklist -->
@@ -89,7 +91,7 @@
                 <button class="icon-btn" id="clearChat" title="Clear chat">🗑️</button>
             </header>
 
-            <div class="chat-area" id="chatArea">
+            <div class="chat-area" id="chatArea" aria-live="polite" role="log">
                 <!-- Welcome Card -->
                 <div class="welcome-card" id="welcomeCard">
                     <div class="welcome-glow"></div>

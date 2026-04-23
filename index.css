@@ -23,6 +23,12 @@
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
+/* Accessibility Focus */
+:focus-visible {
+  outline: 3px solid var(--accent-light);
+  outline-offset: 2px;
+}
+
 html { font-size: 15px; }
 
 body {
@@ -212,6 +218,12 @@ body {
 .message.user .msg-bubble { background: linear-gradient(135deg, var(--accent), #7c3aed); color: white; }
 .msg-bubble h3 { font-size: 1rem; margin-bottom: 8px; color: var(--accent-light); }
 .message.user .msg-bubble h3 { color: white; }
+.tts-btn {
+  position: absolute; top: 10px; right: 10px; background: none; border: none;
+  font-size: 1.1rem; cursor: pointer; opacity: 0.6; transition: all 0.2s;
+}
+.tts-btn:hover { opacity: 1; transform: scale(1.1); }
+.tts-btn.speaking { color: var(--success); opacity: 1; animation: pulse 1s infinite; }
 .msg-bubble ul, .msg-bubble ol { padding-left: 18px; margin: 6px 0; }
 .msg-bubble li { margin-bottom: 5px; }
 .msg-bubble .step { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0; }

@@ -153,6 +153,39 @@ const knowledgeBase = {
             simple: "হাই! 👋 আমি **ভোটবাডি**, আপনার বন্ধুত্বপূর্ণ নির্বাচন সহায়ক!\n\nভোট কীভাবে কাজ করে তা আমি আপনাকে খুব সহজ উপায়ে বলতে পারি। আপনি কি জানতে চান কীভাবে প্রথমবারের মতো ভোট দিতে হয়?"
         },
         suggestions: ["How do I vote for the first time?", "What is EVM?"]
+    },
+    "pwd": {
+        en: {
+            normal: "The Election Commission provides special facilities for Persons with Disabilities (PwD) and Senior Citizens:\n\n- Wheelchairs and ramps at all polling booths.\n- Priority voting (no need to stand in lines).\n- Free transport facility (can be booked via the Saksham App).\n- EVMs with Braille features for visually impaired voters.\n- Home voting facility (using Form 12D) for voters aged 85+ or with 40%+ disability.",
+            simple: "If someone is old or has trouble walking or seeing, they get special help!\n\n1. They don't have to wait in lines.\n2. There are wheelchairs to help them move.\n3. The voting machine has special bumps (Braille) so blind people can feel the buttons.\n4. Sometimes, officers even go to their homes so they can vote from bed!"
+        },
+        bn: {
+            normal: "নির্বাচন কমিশন প্রতিবন্ধী ব্যক্তিদের (PwD) এবং প্রবীণ নাগরিকদের জন্য বিশেষ সুবিধা প্রদান করে:\n\n- সমস্ত ভোটকেন্দ্রে হুইলচেয়ার এবং র্যাম্প।\n- অগ্রাধিকার ভিত্তিতে ভোটদান (লাইনে দাঁড়ানোর প্রয়োজন নেই)।\n- বিনামূল্যের পরিবহন সুবিধা (সক্ষম অ্যাপের মাধ্যমে বুক করা যেতে পারে)।\n- দৃষ্টিহীন ভোটারদের জন্য ব্রেইল বৈশিষ্ট্যযুক্ত ইভিএম।\n- ৮৫+ বয়সী বা ৪০%+ প্রতিবন্ধী ভোটারদের জন্য হোম ভোটিং সুবিধা (ফর্ম 12D ব্যবহার করে)।",
+            simple: "যদি কেউ বয়স্ক হন বা হাঁটাচলা বা দেখতে সমস্যা হয়, তবে তারা বিশেষ সাহায্য পান!\n\n১. তাদের লাইনে অপেক্ষা করতে হয় না।\n২. তাদের চলাচলের জন্য হুইলচেয়ার থাকে।\n৩. ভোটিং মেশিনে বিশেষ উঁচু অংশ (ব্রেইল) থাকে যাতে অন্ধ ব্যক্তিরা বোতামগুলো অনুভব করতে পারেন।\n৪. কখনও কখনও, কর্মকর্তারা তাদের বাড়িতে যান যাতে তারা বিছানা থেকে ভোট দিতে পারেন!"
+        },
+        suggestions: ["How do I vote for the first time?", "Find my polling booth"]
+    },
+    "nri": {
+        en: {
+            normal: "Overseas Indian citizens (NRIs) can register to vote!\n\nTo register, you must fill out **Form 6A** on the Voter Portal. \n\n*Note:* Currently, NRIs cannot vote online or by post. You must be physically present at your designated polling booth in India on election day with your original Passport.",
+            simple: "If you are an Indian living in another country, you can still vote!\n\nYou just fill out a special form online (Form 6A). But, to actually vote, you have to travel back to India on voting day and show your passport."
+        },
+        bn: {
+            normal: "প্রবাসী ভারতীয় নাগরিকরা (এনআরআই) ভোট দেওয়ার জন্য নিবন্ধন করতে পারেন!\n\nনিবন্ধন করতে, আপনাকে ভোটার পোর্টালে **ফর্ম 6A** পূরণ করতে হবে।\n\n*দ্রষ্টব্য:* বর্তমানে, এনআরআইরা অনলাইনে বা ডাকযোগে ভোট দিতে পারবেন না। নির্বাচনের দিন আপনার আসল পাসপোর্ট নিয়ে আপনাকে ভারতের নির্ধারিত ভোটকেন্দ্রে শারীরিকভাবে উপস্থিত থাকতে হবে।",
+            simple: "আপনি যদি অন্য দেশে বসবাসকারী ভারতীয় হন, তবুও আপনি ভোট দিতে পারবেন!\n\nআপনাকে শুধু অনলাইনে একটি বিশেষ ফর্ম (ফর্ম 6A) পূরণ করতে হবে। তবে, আসলে ভোট দেওয়ার জন্য, আপনাকে ভোটের দিন ভারতে ফিরে যেতে হবে এবং আপনার পাসপোর্ট দেখাতে হবে।"
+        },
+        suggestions: ["Find my polling booth", "What documents do I need to vote?"]
+    },
+    "location": {
+        en: {
+            normal: "To find your specific Polling Booth or State rules:\n\n1. Visit the **Voter Service Portal (voters.eci.gov.in)** and click 'Search in Electoral Roll'.\n2. Or, download the **Voter Helpline App**.\n3. You can also SMS `<ECIPS> <EPIC Number>` to **1950**.\n\nEach state has its own Chief Electoral Officer (CEO) website for local guidelines.",
+            simple: "To find exactly which school or building you need to go to vote:\n\nYou or your parents can check on the government's Voter website, use the Voter App on a phone, or just send a quick SMS to the number 1950!"
+        },
+        bn: {
+            normal: "আপনার নির্দিষ্ট ভোটকেন্দ্র বা রাজ্যের নিয়মাবলী খুঁজতে:\n\n১. **ভোটার সার্ভিস পোর্টালে (voters.eci.gov.in)** যান এবং 'Search in Electoral Roll'-এ ক্লিক করুন।\n২. অথবা, **ভোটার হেল্পলাইন অ্যাপ** ডাউনলোড করুন।\n৩. আপনি **1950** নম্বরে `<ECIPS> <EPIC Number>` লিখে SMS-ও করতে পারেন।\n\nস্থানীয় নির্দেশিকার জন্য প্রতিটি রাজ্যের নিজস্ব মুখ্য নির্বাচনী কর্মকর্তা (CEO) ওয়েবসাইট রয়েছে।",
+            simple: "ভোট দেওয়ার জন্য আপনাকে ঠিক কোন স্কুল বা ভবনে যেতে হবে তা খুঁজতে:\n\nআপনি বা আপনার বাবা-মা সরকারের ভোটার ওয়েবসাইটে চেক করতে পারেন, ফোনে ভোটার অ্যাপ ব্যবহার করতে পারেন, অথবা 1950 নম্বরে একটি দ্রুত এসএমএস পাঠাতে পারেন!"
+        },
+        suggestions: ["What happens on voting day?", "How do I vote for the first time?"]
     }
 };
 
@@ -341,6 +374,9 @@ function matchQuery(query) {
     if (normalizedQuery.includes('register') || normalizedQuery.includes('registration') || query.includes('নিবন্ধন')) return getKBData('registration');
     if (normalizedQuery.includes('day') || normalizedQuery.includes('process') || query.includes('দিন')) return getKBData('day');
     if (normalizedQuery.includes('count') || normalizedQuery.includes('result') || query.includes('গণনা')) return getKBData('counted');
+    if (normalizedQuery.includes('pwd') || normalizedQuery.includes('disabled') || normalizedQuery.includes('wheelchair') || query.includes('প্রতিবন্ধী')) return getKBData('pwd');
+    if (normalizedQuery.includes('nri') || normalizedQuery.includes('overseas') || query.includes('প্রবাসী')) return getKBData('nri');
+    if (normalizedQuery.includes('location') || normalizedQuery.includes('booth') || normalizedQuery.includes('state') || normalizedQuery.includes('where') || query.includes('কোথায়') || query.includes('কেন্দ্র')) return getKBData('location');
 
     // Default fallback
     return {
@@ -366,6 +402,11 @@ function appendMessage(text, sender, suggestions = []) {
     
     let contentHtml = `<div class="msg-avatar">${avatar}</div><div class="msg-bubble">${text}`;
     
+    if (sender === 'bot') {
+        const plainText = text.replace(/<[^>]*>?/gm, '').replace(/"/g, '&quot;');
+        contentHtml += `<button class="tts-btn" onclick="speakText(this, \`${plainText}\`)" aria-label="Read aloud" title="Read aloud">🔊</button>`;
+    }
+    
     if (suggestions && suggestions.length > 0 && sender === 'bot') {
         contentHtml += `<div class="follow-up-chips">`;
         suggestions.forEach(s => {
@@ -379,6 +420,31 @@ function appendMessage(text, sender, suggestions = []) {
     
     DOM.messagesContainer.appendChild(div);
     scrollToBottom();
+}
+
+function speakText(btn, text) {
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        
+        if (btn.classList.contains('speaking')) {
+            document.querySelectorAll('.tts-btn').forEach(b => b.classList.remove('speaking'));
+            return;
+        }
+
+        document.querySelectorAll('.tts-btn').forEach(b => b.classList.remove('speaking'));
+        btn.classList.add('speaking');
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = currentLang === 'bn' ? 'bn-IN' : 'en-IN';
+        utterance.rate = 0.95;
+        
+        utterance.onend = () => btn.classList.remove('speaking');
+        utterance.onerror = () => btn.classList.remove('speaking');
+        
+        window.speechSynthesis.speak(utterance);
+    } else {
+        alert("Sorry, your browser doesn't support text-to-speech.");
+    }
 }
 
 function scrollToBottom() {
