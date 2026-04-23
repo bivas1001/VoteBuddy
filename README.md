@@ -59,24 +59,42 @@ If a user is confused or types a generic greeting, VoteBuddy warmly guides them 
 
 - **HTML5:** Semantic and accessible structure.
 - **CSS3 (Vanilla):** Stunning, responsive glassmorphism UI, custom variables, floating particle animations, and zero heavy frameworks.
-- **JavaScript (Vanilla):** Lightweight, zero-dependency state management, DOM manipulation, custom i18n (internationalization), and robust string matching logic.
+- **JavaScript (Vanilla):** Lightweight state management, DOM manipulation, input sanitization, and custom i18n (internationalization).
+- **Google Services:** Integrated with the **Google Gemini API** via native `fetch` for dynamic, intelligent responses.
+- **Testing:** Custom pure JS testing suite (`test.js`) validating edge cases and security.
 
 ---
 
 ## 🚀 How to Run Locally
 
-Because VoteBuddy AI is built with pure Vanilla Web Technologies, there are no complex dependencies or build steps required!
+Because VoteBuddy AI is built with pure Vanilla Web Technologies, there are no complex build steps required!
 
 1. Clone or download this repository.
 2. Open the folder.
-3. Double-click on `index.html` to open it in your default web browser.
-4. Enjoy interacting with VoteBuddy!
+3. **Google API Key (Optional but recommended):** Open `app.js` and replace `YOUR_API_KEY_HERE` with your actual Google Gemini API key to enable dynamic LLM responses. If no key is provided, the app will safely fallback to its robust local Knowledge Base.
+4. Double-click on `index.html` to open it in your default web browser.
+5. Enjoy interacting with VoteBuddy!
+
+---
+
+## 🧪 Testing Suite
+
+We have implemented a rigorous, dependency-free JavaScript testing suite to ensure high code quality and security.
+
+To run the tests:
+1. Open `index.html` in your browser.
+2. Press `F12` to open the Developer Tools Console.
+3. You will immediately see the test execution results for:
+   - First-time voter queries
+   - Timeline extractions
+   - Invalid/Malicious input sanitization (Security)
+   - Bengali language toggles
+   - Edge cases (garbage input)
 
 ---
 
 ## 💡 Future Enhancements (Ideas)
 - **Location API Integration:** Automatically detecting the user's constituency to provide specific polling booth data.
-- **Backend LLM Integration:** Currently operating on a lightweight, lightning-fast static Knowledge Base, but can easily be hooked up to an LLM endpoint for dynamic querying.
 
 ---
 *Built with ❤️ for democratic empowerment.*

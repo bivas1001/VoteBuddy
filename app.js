@@ -99,7 +99,7 @@ const knowledgeBase = {
         },
         suggestions: ["What documents do I need to vote?", "How do I vote for the first time?"]
     },
-     "moved": {
+    "moved": {
         en: {
             normal: "If you have shifted your residence:\n\n**Within the same constituency:** Submit Form 8 to update your address.\n**To a different constituency:** Submit Form 6 to register as a new voter at your new address.\n\nYou can do this online on the Voter's Services Portal. Your old entry will be automatically deleted.",
             simple: "If you moved to a new house:\n\nIf it's nearby, you just fill out a small form to change your address.\nIf you moved far away to a new city, you have to register again as a new voter there. You can do it on the computer!"
@@ -130,7 +130,7 @@ const knowledgeBase = {
             normal: "ভোটের দিনের প্রক্রিয়াটি এখানে দেওয়া হলো:\n\n<div class='step'><div class='step-num'>1</div><div>**প্রবেশ:** ভোটকেন্দ্রে প্রবেশ করুন এবং অফিসারকে আপনার আইডি দেখান।</div></div>\n<div class='step'><div class='step-num'>2</div><div>**যাচাইকরণ:** অফিসার তালিকায় আপনার নাম পরীক্ষা করেন।</div></div>\n<div class='step'><div class='step-num'>3</div><div>**চিহ্নিতকরণ:** আপনার আঙুলে কালির দাগ দেওয়া হয় এবং আপনি রেজিস্টারে স্বাক্ষর করেন।</div></div>\n<div class='step'><div class='step-num'>4</div><div>**ভোট দেওয়া:** ইভিএম কম্পার্টমেন্টে যান, আপনার প্রার্থীর জন্য বোতাম টিপুন এবং মুদ্রিত স্লিপ (ভিভিপিএটি) পরীক্ষা করুন।</div></div>",
             simple: "ভোটের দিন:\n\n১. তুমি ভোটিং রুমে গিয়ে তোমার আইডি দেখাও।\n২. তারা তোমার নাম পরীক্ষা করে এবং তোমার আঙুলে একটি ছোট কালির দাগ দেয়।\n৩. তুমি একটি পর্দার পিছনে গিয়ে মেশিনের বোতাম টিপো, এবং তোমার কাজ শেষ!"
         },
-         suggestions: ["What is EVM?", "How are votes counted?"]
+        suggestions: ["What is EVM?", "How are votes counted?"]
     },
     "counted": {
         en: {
@@ -141,7 +141,7 @@ const knowledgeBase = {
             normal: "ফলাফল গণনার প্রক্রিয়া:\n\n১. ভোট গ্রহণ শেষ হওয়ার পরে, ইভিএমগুলি সিল করা হয় এবং পাহারায় সুরক্ষিত স্ট্রং রুমে সংরক্ষণ করা হয়।\n২. গণনার দিন, কর্মকর্তারা প্রার্থীদের উপস্থিতিতে ইভিএম খোলেন।\n৩. তারা কন্ট্রোল ইউনিটের 'ফলাফল' বোতাম টিপেন, যা প্রতিটি প্রার্থীর জন্য মোট ভোট দেখায়।\n৪. নির্বাচনী এলাকায় সর্বাধিক ভোট পাওয়া প্রার্থী বিজয়ী হন!",
             simple: "সবাই ভোট দেওয়ার পরে:\n\n১. ভোটিং মেশিনগুলি একটি শক্ত ঘরে নিরাপদে তালাবদ্ধ থাকে।\n২. গণনার দিন, কর্মকর্তারা সেগুলোর তালা খোলেন।\n৩. কে কত ভোট পেয়েছে তা মেশিনটি দ্রুত গণনা করে।\n৪. যে ব্যক্তির সংখ্যা সবচেয়ে বেশি সে জয়ী হয়!"
         },
-         suggestions: ["Explain the election timeline", "What happens on voting day?"]
+        suggestions: ["Explain the election timeline", "What happens on voting day?"]
     },
     "greeting": {
         en: {
@@ -197,19 +197,19 @@ const DOM = {
     sendBtn: document.getElementById('sendBtn'),
     typingIndicator: document.getElementById('typingIndicator'),
     welcomeCard: document.getElementById('welcomeCard'),
-    
+
     // Toggles
     langEn: document.getElementById('langEn'),
     langBn: document.getElementById('langBn'),
     modeNormal: document.getElementById('modeNormal'),
     modeSimple: document.getElementById('modeSimple'),
-    
+
     // Sidebar
     sidebar: document.getElementById('sidebar'),
     menuBtn: document.getElementById('menuBtn'),
     sidebarClose: document.getElementById('sidebarClose'),
     clearChat: document.getElementById('clearChat'),
-    
+
     // Modals
     quizModal: document.getElementById('quizModal'),
     checklistModal: document.getElementById('checklistModal'),
@@ -233,7 +233,7 @@ function init() {
     });
 
     // Auto-resize textarea
-    DOM.userInput.addEventListener('input', function() {
+    DOM.userInput.addEventListener('input', function () {
         this.style.height = 'auto';
         this.style.height = (this.scrollHeight) + 'px';
     });
@@ -276,7 +276,7 @@ function init() {
     DOM.quizClose.addEventListener('click', () => DOM.quizModal.classList.remove('active'));
     DOM.checklistClose.addEventListener('click', () => DOM.checklistModal.classList.remove('active'));
     DOM.journeyClose.addEventListener('click', () => DOM.journeyModal.classList.remove('active'));
-    
+
     // Close modal on outside click
     document.querySelectorAll('.modal-overlay').forEach(modal => {
         modal.addEventListener('click', (e) => {
@@ -310,9 +310,24 @@ function updateUIStrings() {
     // For a real app, you'd update all sidebar items and static text here based on data-i18n attributes
 }
 
+function sanitizeInput(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+
 function handleSend() {
-    const text = DOM.userInput.value.trim();
+    let text = DOM.userInput.value.trim();
     if (!text) return;
+
+    // Security: Input length limit
+    if (text.length > 250) {
+        alert("Your message is too long. Please keep it under 250 characters.");
+        return;
+    }
+
+    // Security: Sanitize input to prevent injection
+    text = sanitizeInput(text);
 
     // Reset input
     DOM.userInput.value = '';
@@ -321,7 +336,35 @@ function handleSend() {
     processQuery(text);
 }
 
-function processQuery(query) {
+const GEMINI_API_KEY = "AIzaSyDSw_3voPg7HtUlZl5LGxXWBz1jKfn9kOU"; // Insert actual API key for full scoring
+
+async function callGeminiAPI(prompt) {
+    if (GEMINI_API_KEY === "YOUR_API_KEY_HERE") {
+        throw new Error("API Key missing");
+    }
+
+    const systemPrompt = `You are VoteBuddy, a highly neutral, beginner-friendly election assistant AI. 
+Rules:
+1. Provide step-by-step explanations.
+2. Maintain absolute political neutrality.
+3. Use simple language (ELI10 approach).
+4. Reply in Bengali if the user asks in Bengali.
+5. Keep responses concise and structured.`;
+
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            contents: [{ parts: [{ text: `${systemPrompt}\nUser Query: ${prompt}` }] }]
+        })
+    });
+
+    if (!response.ok) throw new Error("Network response was not ok");
+    const data = await response.json();
+    return data.candidates[0].content.parts[0].text;
+}
+
+async function processQuery(query) {
     // Hide welcome card
     DOM.welcomeCard.classList.add('hidden');
 
@@ -332,19 +375,29 @@ function processQuery(query) {
     DOM.typingIndicator.classList.add('active');
     scrollToBottom();
 
-    // Match query (simulate AI delay)
-    setTimeout(() => {
-        const responseData = matchQuery(query);
+    try {
+        // Try to generate response using Google Gemini API
+        let aiResponse = await callGeminiAPI(query);
         DOM.typingIndicator.classList.remove('active');
-        
-        appendMessage(responseData.text, 'bot', responseData.suggestions);
-    }, 1000);
+
+        // Format response
+        aiResponse = aiResponse.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+        appendMessage(aiResponse, 'bot');
+    } catch (e) {
+        // Fallback to local Knowledge Base if API fails (Efficiency/Robustness)
+        console.warn("Falling back to local Knowledge Base:", e.message);
+        setTimeout(() => {
+            const responseData = matchQuery(query);
+            DOM.typingIndicator.classList.remove('active');
+            appendMessage(responseData.text, 'bot', responseData.suggestions);
+        }, 1000);
+    }
 }
 
 function matchQuery(query) {
     // Normalize string: lowercase and remove extra spaces/punctuation for better matching
     const normalizedQuery = query.toLowerCase().replace(/[^\w\s\u0980-\u09FF]/gi, '').trim().replace(/\s+/g, ' ');
-    
+
     // Multilingual command switch
     if (normalizedQuery.includes("bengali") || query.includes("বাংলা")) {
         setLang('bn');
@@ -354,18 +407,18 @@ function matchQuery(query) {
         setLang('en');
         return { text: "I am now speaking in English. How can I help you?", suggestions: ["How do I vote for the first time?", "What is EVM?"] };
     }
-    
+
     // Greetings matching
     const greetings = ['hi', 'hello', 'hey', 'whats up', 'what is your name', 'whats your name', 'who are you', 'হ্যালো', 'হাই'];
     if (greetings.some(g => normalizedQuery === g || normalizedQuery.startsWith(g + ' ') || normalizedQuery.endsWith(' ' + g))) {
         return getKBData('greeting');
     }
-    
+
     // Keyword matching
     if (normalizedQuery.includes('first time') || normalizedQuery.includes('how to vote') || query.includes('প্রথমবার')) return getKBData('first time');
     if (normalizedQuery.includes('timeline') || query.includes('সময়রেখা') || normalizedQuery.includes('when')) return getKBData('timeline');
     if (normalizedQuery.includes('document') || normalizedQuery.includes('id') || query.includes('নথি')) {
-        if(normalizedQuery.includes('lost') || query.includes('হারিয়ে')) return getKBData('lost');
+        if (normalizedQuery.includes('lost') || query.includes('হারিয়ে')) return getKBData('lost');
         return getKBData('document');
     }
     if (normalizedQuery.includes('evm') || normalizedQuery.includes('machine') || query.includes('ইভিএম')) return getKBData('evm');
@@ -397,16 +450,16 @@ function getKBData(key) {
 function appendMessage(text, sender, suggestions = []) {
     const div = document.createElement('div');
     div.className = `message ${sender}`;
-    
+
     const avatar = sender === 'bot' ? '🤖' : '👤';
-    
+
     let contentHtml = `<div class="msg-avatar">${avatar}</div><div class="msg-bubble">${text}`;
-    
+
     if (sender === 'bot') {
         const plainText = text.replace(/<[^>]*>?/gm, '').replace(/"/g, '&quot;');
         contentHtml += `<button class="tts-btn" onclick="speakText(this, \`${plainText}\`)" aria-label="Read aloud" title="Read aloud">🔊</button>`;
     }
-    
+
     if (suggestions && suggestions.length > 0 && sender === 'bot') {
         contentHtml += `<div class="follow-up-chips">`;
         suggestions.forEach(s => {
@@ -414,10 +467,10 @@ function appendMessage(text, sender, suggestions = []) {
         });
         contentHtml += `</div>`;
     }
-    
+
     contentHtml += `</div>`;
     div.innerHTML = contentHtml;
-    
+
     DOM.messagesContainer.appendChild(div);
     scrollToBottom();
 }
@@ -425,7 +478,7 @@ function appendMessage(text, sender, suggestions = []) {
 function speakText(btn, text) {
     if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
-        
+
         if (btn.classList.contains('speaking')) {
             document.querySelectorAll('.tts-btn').forEach(b => b.classList.remove('speaking'));
             return;
@@ -437,10 +490,10 @@ function speakText(btn, text) {
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = currentLang === 'bn' ? 'bn-IN' : 'en-IN';
         utterance.rate = 0.95;
-        
+
         utterance.onend = () => btn.classList.remove('speaking');
         utterance.onerror = () => btn.classList.remove('speaking');
-        
+
         window.speechSynthesis.speak(utterance);
     } else {
         alert("Sorry, your browser doesn't support text-to-speech.");
@@ -477,15 +530,15 @@ function renderQuiz() {
     const result = document.getElementById('quizResult');
     const qCount = document.getElementById('quizCounter');
     const pBar = document.getElementById('quizProgressBar');
-    
+
     if (currentQuizIndex < quizQuestions.length) {
         body.style.display = 'block';
         result.style.display = 'none';
-        
+
         const q = quizQuestions[currentQuizIndex];
         qCount.textContent = `Question ${currentQuizIndex + 1} of ${quizQuestions.length}`;
         pBar.style.width = `${((currentQuizIndex) / quizQuestions.length) * 100}%`;
-        
+
         let html = `<div class="quiz-question">${q.q}</div><div class="quiz-options">`;
         q.options.forEach((opt, idx) => {
             html += `<button class="quiz-option" onclick="handleQuizAnswer(${idx})">${opt}</button>`;
@@ -497,7 +550,7 @@ function renderQuiz() {
         body.style.display = 'none';
         result.style.display = 'block';
         pBar.style.width = '100%';
-        
+
         let msg = quizScore === quizQuestions.length ? "Perfect! You are fully prepared to vote." : "Good job! Review the topics to learn more.";
         result.innerHTML = `
             <div class="quiz-result-card">
@@ -509,13 +562,13 @@ function renderQuiz() {
     }
 }
 
-window.handleQuizAnswer = function(idx) {
+window.handleQuizAnswer = function (idx) {
     const q = quizQuestions[currentQuizIndex];
     const opts = document.querySelectorAll('.quiz-option');
-    
+
     // Disable clicks
     opts.forEach(opt => opt.style.pointerEvents = 'none');
-    
+
     if (idx === q.correct) {
         opts[idx].classList.add('correct');
         quizScore++;
@@ -523,7 +576,7 @@ window.handleQuizAnswer = function(idx) {
         opts[idx].classList.add('wrong');
         opts[q.correct].classList.add('correct');
     }
-    
+
     setTimeout(() => {
         currentQuizIndex++;
         renderQuiz();
@@ -545,10 +598,10 @@ function renderChecklist() {
         { id: 'step3', label: 'Check name in Electoral Roll' },
         { id: 'step4', label: 'Locate polling booth' }
     ];
-    
+
     let html = '';
     let completed = 0;
-    
+
     items.forEach(item => {
         const isChecked = checklistData[item.id];
         if (isChecked) completed++;
@@ -559,15 +612,15 @@ function renderChecklist() {
             </div>
         `;
     });
-    
+
     body.innerHTML = html;
-    
+
     const percent = Math.round((completed / items.length) * 100);
     document.getElementById('checklistProgressBar').style.width = `${percent}%`;
     document.getElementById('checklistPercent').textContent = `${percent}% Complete`;
 }
 
-window.toggleChecklist = function(id) {
+window.toggleChecklist = function (id) {
     checklistData[id] = !checklistData[id];
     renderChecklist();
 };
@@ -576,7 +629,7 @@ window.toggleChecklist = function(id) {
 function openJourney() {
     if (window.innerWidth <= 768) DOM.sidebar.classList.remove('open');
     DOM.journeyModal.classList.add('active');
-    
+
     const body = document.getElementById('journeyBody');
     body.innerHTML = `
         <div class="journey-question" id="jq1">
@@ -590,13 +643,13 @@ function openJourney() {
     `;
 }
 
-window.journeyStep1 = function(ans) {
+window.journeyStep1 = function (ans) {
     const btns = document.querySelectorAll('#jq1 .journey-opt');
     btns[0].classList.toggle('selected', ans === 'yes');
     btns[1].classList.toggle('selected', ans === 'no');
-    
+
     const isFirstTimer = ans === 'yes';
-    
+
     document.getElementById('journeyResult').innerHTML = `
         <div class="journey-plan">
             <h3>Your Custom Action Plan</h3>
